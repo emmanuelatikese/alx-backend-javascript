@@ -7,7 +7,7 @@ const updateUniqueItems = (set) => {
     set.clear();
     newSet.forEach((x) => (x[1] === 1 ? set.set(x[0], 100) : set.set(x[0], x[1])));
   } catch (err) {
-    throw new Error(err);
+    throw new Error("Cannot process");
   }
 };
 export default updateUniqueItems;
