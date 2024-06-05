@@ -1,2 +1,3 @@
-const hasValuesFromArray = (set1, arr) => new Set(arr).isSubsetOf(set1);
-export default hasValuesFromArray;
+export default function hasValuesFromArray(set1, arr) {
+  return new Set(arr).isSubsetOf(set1);
+}
