@@ -1,3 +1,2 @@
-// function returns string in stdout.
-const displayMessage = (str) => console.log(`${str}\n`);
+const displayMessage = (str) => console.log(str);
 module.exports = displayMessage;
