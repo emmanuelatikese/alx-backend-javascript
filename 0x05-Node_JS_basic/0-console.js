@@ -1,2 +1,2 @@
-const displayMessage = (str) => process.stdout.write(str + "\n");
+const displayMessage = (str) => process.stdout.write(`${str}\n`);
 module.exports = displayMessage;
