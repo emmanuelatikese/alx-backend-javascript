@@ -15,8 +15,8 @@ const countStudents = (path) => {
     const numCs = jsonData.filter((x) => x.field === 'CS');
     const numSWE = jsonData.filter((x) => x.field === 'SWE');
 
-    console.log(`Number of students in FIELD: ${numCs.length}. List: ${numCs.map((x) => x.firstname).join(', ')}`);
-    console.log(`Number of students in FIELD: ${numSWE.length}. List: ${numSWE.map((x) => x.firstname).join(', ')}`);
+    console.log(`Number of students in CS: ${numCs.length}. List: ${numCs.map((x) => x.firstname).join(', ')}`);
+    console.log(`Number of students in SWE: ${numSWE.length}. List: ${numSWE.map((x) => x.firstname).join(', ')}`);
   } catch (err) {
     throw new Error('Cannot load the database');
   }
