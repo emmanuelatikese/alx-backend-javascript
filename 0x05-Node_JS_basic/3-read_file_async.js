@@ -10,15 +10,18 @@ const countStudents = (path) => fs.readFile(path, 'utf8')
       return acc;
     }, {}));
 
-    console.log(`Number of students: ${jsonData.length}`);
+    const firstMessage = `Number of students: ${jsonData.length}`;
+    console.log(firstMessage);
 
     const numCs = jsonData.filter((x) => x.field === 'CS');
     const numSWE = jsonData.filter((x) => x.field === 'SWE');
 
-    console.log(`Number of students in CS: ${numCs.length}. List: ${numCs.map((x) => x.firstname).join(', ')}`);
-    console.log(`Number of students in SWE: ${numSWE.length}. List: ${numSWE.map((x) => x.firstname).join(', ')}`);
+    const secondMessage = `Number of students in CS: ${numCs.length}. List: ${numCs.map((x) => x.firstname).join(', ')}`;
+    const thirdMessage = `Number of students in SWE: ${numSWE.length}. List: ${numSWE.map((x) => x.firstname).join(', ')}`;
+    console.log(secondMessage);
+    console.log(thirdMessage);
 
-    return true;
+    return ([firstMessage, secondMessage, thirdMessage]);
   })
   .catch(() => {
     throw new Error('Cannot load the database');
