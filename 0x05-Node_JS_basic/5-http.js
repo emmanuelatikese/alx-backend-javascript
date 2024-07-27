@@ -9,7 +9,7 @@ const app = http.createServer((req, res) => {
   if (req.url === '/students') {
     countStudents(db).then((x) => {
       res.write('This is the list of our students\n');
-      x.forEach((msg) => res.write(`\n${msg}`));
+      x.forEach((msg) => res.write(`${msg}`));
       res.end();
     });
   }
