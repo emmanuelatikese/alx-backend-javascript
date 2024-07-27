@@ -21,7 +21,7 @@ const countStudents = (path) => fs.readFile(path, 'utf8')
     console.log(secondMessage);
     console.log(thirdMessage);
 
-    return ([firstMessage, secondMessage, thirdMessage]);
+    return ([`${firstMessage}\n`, `${secondMessage}\n`, thirdMessage]);
   })
   .catch(() => {
     throw new Error('Cannot load the database');
