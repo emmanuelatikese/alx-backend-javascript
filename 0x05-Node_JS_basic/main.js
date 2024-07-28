@@ -1,12 +1,11 @@
-const countStudents = require('./3-read_file_async');
+const readDatabase = require('./full_server/utils');
 
-// countStudents("database.csv")
-//     .then(() => {
-//         console.log("Done!");
-//     })
-//         .catch((error) => {
-//         console.log(error);
-//     });
-// console.log("After!");
+readDatabase("database.csv")
+    .then(() => {
+        console.log("Done!");
+    })
+        .catch((err) => {
+        throw new Error(err);
+    });
+console.log("After!");
 
-countStudents('database.csv').then(msg => msg.forEach(s => console.log(s))).catch(err => console.log(err));
