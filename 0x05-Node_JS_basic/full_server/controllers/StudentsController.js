@@ -5,10 +5,10 @@ class StudentsController {
     const dbPath = process.argv[2] || ''; return readDatabase(dbPath)
       .then((data) => {
         res.statusCode = 200;
-        res.write('This is the list of our students');
+        res.write('This is the list of our students\n');
         const CsStudents = data.CS;
         const SWEStudents = data.SWE;
-        res.write(`Number of students in CS: ${CsStudents.length}. List: ${CsStudents.join(',')}`);
+        res.write(`Number of students in CS: ${CsStudents.length}. List: ${CsStudents.join(',')}\n`);
         res.write(`Number of students in SWE: ${SWEStudents.length}. List: ${SWEStudents.join(',')}`);
         res.end();
       }).catch(() => {
