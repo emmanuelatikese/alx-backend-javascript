@@ -12,7 +12,7 @@ const app = http.createServer((req, res) => {
       x.forEach((msg) => res.write(`${msg}`));
       res.end();
     }).catch((err) => {
-      res.statusCode = 404;
+      res.statusCode = 500;
       res.write(err.message);
       res.end();
     });

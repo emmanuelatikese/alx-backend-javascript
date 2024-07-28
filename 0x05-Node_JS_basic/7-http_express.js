@@ -15,8 +15,7 @@ app.get('/students', (req, res) => {
     x.forEach((msg) => res.write(`${msg}`));
     res.end();
   }).catch((err) => {
-    res.write(err.message);
-    res.end();
+    res.status(500).send(err.message);
   });
 });
 
