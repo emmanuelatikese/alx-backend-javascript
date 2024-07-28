@@ -3,7 +3,7 @@ const readDatabase = require('../utils')
 
 class StudentsController{
     static getAllStudents(req, res){
-        return readDatabase("./database.csv")
+        const dbPath = process.argv[2] || '';        return readDatabase(dbPath)
         .then(data => {
             res.statusCode = 200;
             res.write('This is the list of our students');
