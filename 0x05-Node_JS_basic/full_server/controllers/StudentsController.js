@@ -1,8 +1,10 @@
 const readDatabase = require('../utils');
 
+const dbPath = process.argv[2] || '';
+
 class StudentsController {
   static getAllStudents(req, res) {
-    const dbPath = process.argv[2] || ''; return readDatabase(dbPath)
+    return readDatabase(dbPath)
       .then((data) => {
         res.statusCode = 200;
         res.write('This is the list of our students\n');
@@ -20,12 +22,13 @@ class StudentsController {
 
   static getAllStudentsByMajor(req, res) {
     const { major } = req.params;
-    if (major !== 'CS' || major !== 'SWE') {
+    console.log(major);
+    if (major !== 'CS' && major !== 'SWE') {
       res.statusCode = 500;
       res.write('Major parameter must be CS or SWE');
       res.end();
     }
-    readDatabase('databases.csv')
+    return readDatabase(dbPath)
       .then((data) => {
         res.statusCode = 200;
         res.send(`Number of students in ${major}: ${data[major].length}. List: ${data[major].join(', ')}`);
